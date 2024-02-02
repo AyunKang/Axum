@@ -35,6 +35,7 @@ dependencies = [
  "axum",
  "serde",
  "tokio",
+ "tower-http",
 ]
 
 [[package]]
