@@ -7,9 +7,11 @@ mod mirror_user_agent;
 mod path_variable;
 mod query_params;
 mod read_middleware_custom_header;
+mod set_middleware_custom_header;
 
 use axum::{
     http::Method,
+    middleware,
     routing::{get, patch, post},
     Extension, Router,
 };
@@ -22,6 +24,7 @@ use mirror_user_agent::mirror_user_agent;
 use path_variable::path_variable;
 use query_params::query_params;
 use read_middleware_custom_header::read_middleware_custom_header;
+use set_middleware_custom_header::set_middleware_custom_header;
 use tower_http::cors::{Any, CorsLayer};
 
 #[derive(Clone)]
@@ -43,6 +46,7 @@ pub fn create_router() -> Router {
             "/read_middleware_custom_header",
             get(read_middleware_custom_header),
         )
+        .route_layer(middleware::from_fn(set_middleware_custom_header))
         .route("/", patch(hello_world))
         .route("/mirror_body_string", post(mirror_body_string))
         .route("/mirror_body_json", post(mirror_body_json))
