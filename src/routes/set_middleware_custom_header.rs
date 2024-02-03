@@ -3,7 +3,6 @@ use axum::{
     middleware::Next,
     response::Response,
 };
-use serde::de::value::MapAccessDeserializer;
 
 use super::read_middleware_custom_header::HeaderMessage;
 
