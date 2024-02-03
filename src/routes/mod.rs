@@ -1,4 +1,5 @@
 mod always_error;
+mod get_json;
 mod hello_world;
 mod middleware_message;
 mod mirror_body_json;
@@ -18,6 +19,7 @@ use axum::{
     routing::{get, patch, post},
     Extension, Router,
 };
+use get_json::get_json;
 use hello_world::hello_world;
 use middleware_message::middleware_message;
 use mirror_body_json::mirror_body_json;
@@ -61,6 +63,7 @@ pub fn create_router() -> Router {
         .route("/middleware_message", get(middleware_message))
         .route("/always_error", get(always_error))
         .route("/returns_201", post(returns_201))
+        .route("/get_json", get(get_json))
         .layer(Extension(shared_data))
         .layer(cors)
 }
