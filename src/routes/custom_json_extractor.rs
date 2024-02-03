@@ -2,7 +2,7 @@ use axum::{
     async_trait,
     body::HttpBody,
     extract::{FromRequest, RequestParts},
-    http::{self, StatusCode},
+    http::StatusCode,
     BoxError, Json,
 };
 use serde::Deserialize;
