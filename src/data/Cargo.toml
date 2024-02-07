@@ -7,4 +7,9 @@ edition = "2021"
 
 [dependencies]
 dotenvy = "0.15.7"
-sea-orm = { version = "0.12.14", features = ["sqlx-postgres", "runtime-tokio-rustls"] }
+sea-orm = { version = "0.12.14", features = [
+    "sqlx-postgres",
+    "runtime-tokio-rustls",
+] }
+dotenvy_macro = "0.15.7"
+tokio = { version = "1.36.0", features = ["full"] }
