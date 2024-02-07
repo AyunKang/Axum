@@ -161,6 +161,7 @@ name = "ax"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "dotenvy",
  "sea-orm 0.10.7",
  "serde",
  "tokio",
@@ -472,6 +473,7 @@ dependencies = [
 name = "data"
 version = "0.1.0"
 dependencies = [
+ "dotenvy",
  "sea-orm 0.12.14",
 ]
 

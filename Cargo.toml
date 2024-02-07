@@ -16,3 +16,4 @@ sea-orm = { version = "0.10.1", features = [
     "sqlx-postgres",
     "runtime-tokio-rustls",
 ] }
+dotenvy = "0.15.7"
